@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-const prettyMilliseconds = require('pretty-ms')
-
 
 const Timer = ()  => {
     const [time, setTime] = useState(0)
@@ -12,16 +10,13 @@ const Timer = ()  => {
         if (isOn) {
           interval = setInterval(() => {
             setTime(time => Date.now() - startTime);
-          }, 1000)
+          }, 10)
         } else if (!isOn && time !== 0) {
           clearInterval(interval)
         }
 
         return () => clearInterval(interval)
-    //   }, [isOn, time]);
     }, [isOn]);
-
-
 
     const startTimer = () => {
         setTime(0)
@@ -51,70 +46,30 @@ const Timer = ()  => {
     return (
         <>
             <h1>Timer</h1>
-            <h3>{prettyMilliseconds(time, {colonNotation: true, secondsDecimalDigits: 2, keepDecimalsOnWholeSeconds: true})}</h3>
-
+            <h3>{msToTime(time)}</h3>
             {startButton}
             {stopButton}
             {resetButton}
         </>
     );
-
-
 }
 
+function msToTime(duration) {
+    let seconds = Math.floor((duration / 1000) % 60)
+    let minutes = Math.floor((duration / (1000 * 60)) % 60)
+    let milliseconds =  parseInt((duration % 1000) / 10)
 
-// class Timer extends React.Component {
-//     constructor(props){
-//       super(props)
-//       this.state = {
-//         time: 0,
-//         start: 0,
-//         isOn: false
-//       }
-//       this.startTimer = this.startTimer.bind(this)
-//       this.stopTimer = this.stopTimer.bind(this)
-//       this.resetTimer = this.resetTimer.bind(this)
-//     }
-//     startTimer() {
-//       this.setState({
-//         time: this.state.time,
-//         start: Date.now() - this.state.time,
-//         isOn: true
-//       })
-//       this.timer = setInterval(() => this.setState({
-//         time: Date.now() - this.state.start
-//       }), 1);
-//     }
-//     stopTimer() {
-//       this.setState({isOn: false})
-//       clearInterval(this.timer)
-//     }
-//     resetTimer() {
-//       this.setState({time: 0})
-//     }
-//     render() {
-//       let start = (this.state.time == 0) ?
-//         <button onClick={this.startTimer}>start</button> :
-//         null
-//       let stop = (this.state.isOn) ?
-//         <button onClick={this.stopTimer}>stop</button> :
-//         null
-//       let reset = (this.state.time != 0 && !this.state.isOn) ?
-//         <button onClick={this.resetTimer}>reset</button> :
-//         null
-//       let resume = (this.state.time != 0 && !this.state.isOn) ?
-//         <button onClick={this.startTimer}>resume</button> :
-//         null
-//       return(
-//         <div>
-//           <h3>timer: {this.state.time}</h3>
-//           {start}
-//           {resume}
-//           {stop}
-//           {reset}
-//         </div>
-//       )
-//     }
-//   }
+    if(minutes > 0){
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        minutes += ":"
+    }
+    else
+        minutes = ""
+
+    seconds = (seconds < 10) ? "0" + seconds : seconds
+    milliseconds = (milliseconds < 10) ? "0" + milliseconds : milliseconds
+
+    return minutes + seconds + "." + milliseconds;
+  }
 
 export default Timer;
