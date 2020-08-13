@@ -45,7 +45,6 @@ const Timer = ()  => {
 
     return (
         <>
-            <h1>Timer</h1>
             <h3>{msToTime(time)}</h3>
             {startButton}
             {stopButton}
@@ -69,7 +68,7 @@ function msToTime(duration) {
     seconds = (seconds < 10) ? "0" + seconds : seconds
     milliseconds = (milliseconds < 10) ? "0" + milliseconds : milliseconds
 
-    return minutes + seconds + "." + milliseconds;
+    return minutes + seconds + "." + milliseconds
   }
 
-export default Timer;
+export default Timer
