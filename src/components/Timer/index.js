@@ -1,38 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-const Timer = ()  => {
-    const [time, setTime] = useState(0)
-    const [startTime, setStartTime] = useState(0)
-    const [isOn, setIsOn] = useState(false)
-
-    useEffect(() => {
-        let interval = null;
-        if (isOn) {
-          interval = setInterval(() => {
-            setTime(time => Date.now() - startTime);
-          }, 10)
-        } else if (!isOn && time !== 0) {
-          clearInterval(interval)
-        }
-
-        return () => clearInterval(interval)
-    }, [isOn]);
-
-    const startTimer = () => {
-        setTime(0)
-        setStartTime(Date.now())
-        setIsOn(true)
-    }
-
-    const stopTimer = () => {
-        setIsOn(false)
-    }
-      
-    const resetTimer = () => {
-        stopTimer()
-        setTime(0)
-    }
-
+const Timer = ({time, isOn, startTimer, stopTimer, resetTimer})  => {
     let startButton = (time === 0 && !isOn) ?
         <button onClick={startTimer}>start</button> :
         null
