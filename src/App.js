@@ -3,6 +3,7 @@ import './App.css'
 import Scramble from './components/Scramble'
 import Timer from './components/Timer'
 import ScrambleSchema from './components/ScrambleSchema'
+import SolvesList from './components/solvesList'
 
 const App = () => {
   const [timerTime, setTimerTime] = useState(0)
@@ -11,11 +12,13 @@ const App = () => {
 
   const [currentScramble, setCurrentScramble] = useState(generateScramble(20))
 
+  const [solves, setSolves] = useState([])
+
   useEffect(() => {
     let interval = null;
     if (timerIsOn) {
       interval = setInterval(() => {
-        setTimerTime(TimerTime => Date.now() - timerStartTime);
+        setTimerTime(time => Date.now() - timerStartTime);
       }, 10)
     } else if (!timerIsOn && timerTime !== 0) {
       clearInterval(interval)
@@ -32,13 +35,10 @@ const App = () => {
 
   const stopTimer = () => {
     setTimerIsOn(false)
-  }
-    
-  const resetTimer = () => {
-    stopTimer()
-    setTimerTime(0)
+    setSolves(solves => [...solves, {time: timerTime, scramble: currentScramble, date: timerStartTime}]);
     setCurrentScramble(generateScramble(20))
   }
+    
 
   return (
     <div className="App">
@@ -52,9 +52,9 @@ const App = () => {
         isOn={timerIsOn}
         startTimer={startTimer}
         stopTimer={stopTimer}
-        resetTimer={resetTimer}
       />
       <ScrambleSchema scramble={currentScramble}></ScrambleSchema>
+      <SolvesList solves={solves}></SolvesList>
     </div>
   );
 }

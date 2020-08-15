@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Timer = ({time, isOn, startTimer, stopTimer})  => {
-    let startButton = <button onClick={startTimer}>start</button> 
-    let stopButton = <button onClick={stopTimer}>stop</button>
-
+const SolvesList = ({ solves })  => {
     return (
-        <>
-            <h3>{msToTime(time)}</h3>
-            { isOn? stopButton : startButton }
-        </>
+        <div>
+            {
+                solves.map((solve, i) => {        
+                    return (
+                        <p key={i}>{msToTime(solve['time'])}</p>
+                    )
+                })
+            }
+        </div>
     );
 }
 
@@ -30,4 +32,4 @@ function msToTime(duration) {
     return minutes + seconds + "." + milliseconds
   }
 
-export default Timer
+export default SolvesList
