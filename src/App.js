@@ -36,10 +36,13 @@ const App = () => {
 
   const stopTimer = () => {
     setTimerIsOn(false)
-    setSolves(solves => [...solves, {time: timerTime, scramble: currentScramble, date: timerStartTime}]);
+    setSolves(solves => [...solves, {time: timerTime, scramble: currentScramble, date: timerStartTime}])
     setCurrentScramble(generateScramble(20))
   }
-    
+
+  const deleteSolve = (index) => {
+    setSolves(solves => solves.filter((_, i) => i !== index))
+  }
 
   return (
     <div className="App">
@@ -55,7 +58,7 @@ const App = () => {
         stopTimer={stopTimer}
       />
       <ScrambleSchema scramble={currentScramble}></ScrambleSchema>
-      <SolvesList solves={solves}></SolvesList>
+      <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
     </div>
   );
 }

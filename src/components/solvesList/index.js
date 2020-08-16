@@ -1,17 +1,22 @@
 import React from 'react'
 import { msToTime } from '../../utils/time'
 
-const SolvesList = ({ solves })  => {
+const SolvesList = ({ solves, deleteSolve})  => {
     return (
-        <div>
-            {
+        <table>
+            <tbody>
+             {
                 solves.map((solve, i) => {        
                     return (
-                        <p key={i}>{msToTime(solve['time'])}</p>
+                        <tr key={i}>
+                            <td>{msToTime(solve['time'])}</td>
+                            <td><button onClick={() => deleteSolve(i)}>delete</button></td>
+                        </tr>
                     )
                 })
-            }
-        </div>
+            }    
+            </tbody>
+        </table>
     );
 }
 
