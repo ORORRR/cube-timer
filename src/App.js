@@ -4,6 +4,7 @@ import Scramble from './components/Scramble'
 import Timer from './components/Timer'
 import ScrambleSchema from './components/ScrambleSchema'
 import SolvesList from './components/solvesList'
+import { generateScramble } from './utils/cube'
 
 const App = () => {
   const [timerTime, setTimerTime] = useState(0)
@@ -57,17 +58,6 @@ const App = () => {
       <SolvesList solves={solves}></SolvesList>
     </div>
   );
-}
-
-
-const generateScramble = (length = 20) => {
-  const moves = [
-    "R",  "L",  "U",  "D",  "F",  "B",
-    "R'", "L'", "U'", "D'", "F'", "B'",
-    "R2", "L2", "U2", "D2", "F2", "B2"
-  ]
-
-  return Array(length).fill().map(() => moves[Math.floor(Math.random() * moves.length)])
 }
 
 export default App
