@@ -10,7 +10,7 @@ const Timer = ({time, isOn, startTimer, stopTimer})  => {
             <h3>{msToTime(time)}</h3>
             { isOn? stopButton : startButton }
         </>
-    );
+    )
 }
 
 export default Timer

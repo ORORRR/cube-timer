@@ -4,6 +4,7 @@ import Scramble from './components/Scramble'
 import Timer from './components/Timer'
 import ScrambleSchema from './components/ScrambleSchema'
 import SolvesList from './components/solvesList'
+import SolvesGraph from './components/solvesGraph'
 import { generateScramble } from './utils/cube'
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
     let interval = null;
     if (timerIsOn) {
       interval = setInterval(() => {
-        setTimerTime(time => Date.now() - timerStartTime);
+        setTimerTime(Date.now() - timerStartTime);
       }, 10)
     } else if (!timerIsOn && timerTime !== 0) {
       clearInterval(interval)
@@ -59,6 +60,7 @@ const App = () => {
       />
       <ScrambleSchema scramble={currentScramble}></ScrambleSchema>
       <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
+      <SolvesGraph solves={solves}></SolvesGraph>
     </div>
   );
 }
