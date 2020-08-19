@@ -6,6 +6,7 @@ import ScrambleSchema from './components/ScrambleSchema'
 import SolvesList from './components/solvesList'
 import SolvesGraph from './components/solvesGraph'
 import { generateScramble } from './utils/cube'
+import Statistics from './components/Statistics'
 
 const App = () => {
   const [timerTime, setTimerTime] = useState(0)
@@ -60,6 +61,7 @@ const App = () => {
       />
       <ScrambleSchema scramble={currentScramble}></ScrambleSchema>
       <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
+      <Statistics solves={solves}></Statistics>
       <SolvesGraph solves={solves}></SolvesGraph>
     </div>
   );

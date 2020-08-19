@@ -17,7 +17,7 @@ const SolvesList = ({ solves, deleteSolve})  => {
             }    
             </tbody>
         </table>
-    );
+    )
 }
 
 export default SolvesList
