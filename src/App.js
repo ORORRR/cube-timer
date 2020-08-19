@@ -15,7 +15,11 @@ const App = () => {
 
   const [currentScramble, setCurrentScramble] = useState(generateScramble(20))
 
-  const [solves, setSolves] = useState([])
+  const [solves, setSolves] = useState( JSON.parse(localStorage.getItem('solves')) || [])
+
+  useEffect(() => {
+    localStorage.setItem('solves', JSON.stringify(solves));
+  }, [solves]);
 
   useEffect(() => {
     let interval = null;
