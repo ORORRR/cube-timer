@@ -13,26 +13,18 @@ const App = () => {
   const [timerStartTime, setTimerStartTime] = useState(0)
   const [timerIsOn, setTimerIsOn] = useState(false)
 
-  const [currentScramble, setCurrentScramble] = useState(generateScramble(20))
-
-  const [solves, setSolves] = useState( JSON.parse(localStorage.getItem('solves')) || [])
-
   useEffect(() => {
-    localStorage.setItem('solves', JSON.stringify(solves));
-  }, [solves]);
-
-  useEffect(() => {
-    let interval = null;
+    let interval = null
     if (timerIsOn) {
       interval = setInterval(() => {
-        setTimerTime(Date.now() - timerStartTime);
+        setTimerTime(Date.now() - timerStartTime)
       }, 10)
-    } else if (!timerIsOn && timerTime !== 0) {
+    } else if (timerTime !== 0) {
       clearInterval(interval)
     }
 
     return () => clearInterval(interval)
-  }, [timerIsOn]);
+  }, [timerIsOn])
 
   const startTimer = () => {
     setTimerTime(0)
@@ -45,6 +37,54 @@ const App = () => {
     setSolves(solves => [...solves, {time: timerTime, scramble: currentScramble, date: timerStartTime}])
     setCurrentScramble(generateScramble(20))
   }
+
+  // ---------------------------------------------------------------------------------------------
+
+  const [spaceKeyPressed, setSpaceKeyPressed] = useState(false)
+
+  useEffect(() => {
+    const spaceDownHandler = ({ key }) => {
+     if (key === ' ') {
+       setSpaceKeyPressed(true)
+     }
+    }
+
+    const spaceUpHandler = ({ key }) => {
+      if (key === ' ') {
+        setSpaceKeyPressed(false)
+      }
+    }
+
+    const preventScrollOnSpace  = (event) => {
+      event.preventDefault();
+    }
+
+    window.addEventListener('keydown', preventScrollOnSpace)
+    window.addEventListener('keydown', spaceDownHandler)
+    window.addEventListener('keyup', spaceUpHandler)
+
+    return () => {
+      window.removeEventListener('keydown', preventScrollOnSpace)
+      window.removeEventListener('keydown', spaceDownHandler);
+      window.removeEventListener('keyup', spaceUpHandler);
+    }
+  }, [])
+
+  useEffect(() => {
+    if (spaceKeyPressed){
+      timerIsOn? stopTimer() : startTimer()
+    }
+  }, [spaceKeyPressed])
+
+  // ---------------------------------------------------------------------------------------------
+
+  const [currentScramble, setCurrentScramble] = useState(generateScramble(20))
+
+  const [solves, setSolves] = useState( JSON.parse(localStorage.getItem('solves')) || [])
+
+  useEffect(() => {
+    localStorage.setItem('solves', JSON.stringify(solves))
+  }, [solves])
 
   const deleteSolve = (index) => {
     setSolves(solves => solves.filter((_, i) => i !== index))
