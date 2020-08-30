@@ -40,9 +40,13 @@ const Column = styled.div `
 
 export const SchemaStatsColumn = styled(Column) `
     @media ${devices.laptop} {
-        width: 15%;
+        width: 22.5%;
         height: 100%;
         position: relative;
+    }
+
+    @media ${devices.laptopL} {
+        width: 17.5%;
     }
 `
 
@@ -68,15 +72,18 @@ export const StatsRow = styled.div `
 export const GraphColumn =  styled(Column) `
     @media ${devices.laptop} {
         width: 60%;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
         vertical-align: bottom;
     }
 `
 
 export const SolvesColumn =  styled(Column) `
     @media ${devices.laptop} {
-        width: 15%;
+        width: 12.5%;
+    }
+    @media ${devices.laptopL} {
+        width: 17.5%;
     }
     overflow-y: auto;
     max-height: inherit;
