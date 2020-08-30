@@ -4,15 +4,15 @@ import styled from 'styled-components'
 const handleColorType = color => {
     switch (color) {
         case "G":
-            return "green";
+            return "#84E41C";
         case "R":
-            return "red";
+            return "#C74446";
         case "Y":
-            return "yellow";
+            return "#F1ED2A";
         case "O":
-            return "orange";
+            return "#ED8A34";
         case "B":
-            return "blue";
+            return "#057DFC";
         case "W":
         default:
             return "white";
