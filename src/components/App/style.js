@@ -81,10 +81,13 @@ export const GraphColumn =  styled(Column) `
 export const SolvesColumn =  styled(Column) `
     @media ${devices.laptop} {
         width: 12.5%;
+        height: 100%;
     }
     @media ${devices.laptopL} {
         width: 17.5%;
     }
-    overflow-y: auto;
-    max-height: inherit;
+    height: 50vh;
+
+    border: darkgray solid 1px;
+    background-color: white;
 `
