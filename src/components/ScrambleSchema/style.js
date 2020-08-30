@@ -24,49 +24,46 @@ export const CubeTile = styled.div`
   height: 1em;
   background-color: ${props => handleColorType(props.color)};
   border: black 0.05em solid;
+  display: inline-block;
 `;
 
 const CubeFace = styled.div`
-  width: 3.4em;
-  height: 3.4em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 0;
+  width: 3em;
+  height: 3em;
+  line-height: 0px;
   position: absolute;
 `;
 
 export const GreenCubeFace = styled(CubeFace)`
-  left: 4.4em;
-  top: 4.4em;
+  left: 3.1em;
+  top: 3.1em;
 `;
 export const BlueCubeFace = styled(CubeFace)`
-  left: 11.2em;
-  top: 4.4em;
+  left: 9.3em;
+  top: 3.1em;
 `;
 export const WhiteCubeFace = styled(CubeFace)`
-  left: 4.4em;
-  top: 1em;
+  left: 3.1em;
+  top: 0;
 `;
 export const YellowCubeFace = styled(CubeFace)`
-  left: 4.4em;
-  top: 7.8em;
+  left: 3.1em;
+  top: 6.2em;
 `;
 export const RedCubeFace = styled(CubeFace)`
-  left: 7.8em; 
-  top: 4.4em;   
+  left: 6.2em; 
+  top: 3.1em;   
 `;
 export const OrangeCubeFace = styled(CubeFace)`
-  left:1em;
-  top: 4.4em;
+  left: 0;
+  top: 3.1em;
 `;
 
 export const CubeSchema = styled.div`
-  width: 13.6em;
-  height: 10.2em;
+  height: 9.3em;
+  width: 12.3em;
   position: relative;
-  padding: 1em;
-  border: darkgray solid 1px;
+  margin: 1em auto 1em auto;
 `;
 
 

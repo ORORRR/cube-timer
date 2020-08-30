@@ -47,8 +47,11 @@ export const SchemaStatsColumn = styled(Column) `
 `
 
 export const SchemaRow = styled.div `
-    width: fit-content;
     margin: auto;
+    width: 100%;
+
+    border: darkgray solid 1px;
+    background-color: white;
 `
 
 export const StatsRow = styled.div `
@@ -57,6 +60,9 @@ export const StatsRow = styled.div `
         bottom: 0px;
         width: 100%;
     }
+
+    border: darkgray solid 1px;
+    background-color: white;
 `
 
 export const GraphColumn =  styled(Column) `
