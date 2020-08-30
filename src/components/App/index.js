@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import './App.css'
-import Scramble from './components/Scramble'
-import Timer from './components/Timer'
-import ScrambleSchema from './components/ScrambleSchema'
-import SolvesList from './components/solvesList'
-import SolvesGraph from './components/solvesGraph'
-import { generateScramble } from './utils/cube'
-import Statistics from './components/Statistics'
+import Scramble from '../Scramble'
+import Timer from '../Timer'
+import ScrambleSchema from '../ScrambleSchema'
+import SolvesList from '../solvesList'
+import SolvesGraph from '../solvesGraph'
+import { generateScramble } from '../../utils/cube'
+import Statistics from '../Statistics'
+import {
+  CubeTimer,
+  Header,
+  By,
+  Utilities,
+  SchemaStatsColumn,
+  GraphColumn,
+  SolvesColumn,
+  SchemaRow,
+  StatsRow
+} from './style'
+import { format } from 'highcharts'
 
 const App = () => {
   const [timerTime, setTimerTime] = useState(0)
@@ -91,10 +102,11 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Cube Timer</h1>
-      </header>
+    <CubeTimer>
+      <Header>
+        <p>Cube Timer</p>
+        <p>by <By>ORORRR</By></p>
+      </Header>
 
       <Scramble scramble={currentScramble}></Scramble>
       <Timer 
@@ -103,12 +115,29 @@ const App = () => {
         startTimer={startTimer}
         stopTimer={stopTimer}
       />
-      <ScrambleSchema scramble={currentScramble}></ScrambleSchema>
-      <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
-      <Statistics solves={solves}></Statistics>
-      <SolvesGraph solves={solves}></SolvesGraph>
-    </div>
-  );
+
+      <Utilities>
+        <SchemaStatsColumn>
+          <SchemaRow>
+            <ScrambleSchema scramble={currentScramble}></ScrambleSchema>
+          </SchemaRow>
+          <StatsRow>
+            <Statistics solves={solves}></Statistics>
+          </StatsRow>
+        </SchemaStatsColumn>
+        
+        <GraphColumn>
+          <SolvesGraph solves={solves}></SolvesGraph>
+        </GraphColumn>
+
+        <SolvesColumn>
+          <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
+        </SolvesColumn>
+      </Utilities>
+
+      
+    </CubeTimer>
+  )
 }
 
 export default App

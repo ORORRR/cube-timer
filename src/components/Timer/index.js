@@ -1,15 +1,18 @@
 import React from 'react'
 import { msToTime } from '../../utils/time'
+import {
+    Time,
+    Indication,
+    TimerBlock
+  } from './style'
 
 const Timer = ({time, isOn, startTimer, stopTimer})  => {
-    let startButton = <button onClick={startTimer}>start</button> 
-    let stopButton = <button onClick={stopTimer}>stop</button>
-
+ 
     return (
-        <>
-            <h3>{msToTime(time)}</h3>
-            { isOn? stopButton : startButton }
-        </>
+        <TimerBlock onClick={isOn? stopTimer : startTimer}>
+            <Time >{msToTime(time)}</Time>
+            <Indication>Click here or hit space to start/stop the timer</Indication>
+        </TimerBlock>
     )
 }
 

@@ -19,12 +19,12 @@ const Statistics = ({ solves })  => {
 
     return (
         <div>
+            <h3>Best:</h3>
+            <p>{ bestTime? msToTime(bestTime) : 'none' }</p>
             <h3>Average of 5:</h3>
             <p>{ averageOf5? msToTime(averageOf5) : 'none' }</p>
             <h3>Average of 12:</h3>
             <p>{ averageOf12? msToTime(averageOf12) : 'none' }</p>
-            <h3>Best:</h3>
-            <p>{ bestTime? msToTime(bestTime) : 'none' }</p>
         </div>
     )
 }
