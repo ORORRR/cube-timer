@@ -18,8 +18,6 @@ import {
 } from './style'
 import clockImage from './../../img/timer.png'
 
-import { format } from 'highcharts'
-
 const App = () => {
   const [timerTime, setTimerTime] = useState(0)
   const [timerStartTime, setTimerStartTime] = useState(0)
@@ -30,7 +28,7 @@ const App = () => {
     if (timerIsOn) {
       interval = setInterval(() => {
         setTimerTime(Date.now() - timerStartTime)
-      }, 10)
+      }, 100)
     } else if (timerTime !== 0) {
       clearInterval(interval)
     }
@@ -46,7 +44,7 @@ const App = () => {
 
   const stopTimer = () => {
     setTimerIsOn(false)
-    setSolves(solves => [...solves, {time: timerTime, scramble: currentScramble, date: timerStartTime}])
+    setSolves(solves => [{time: timerTime, scramble: currentScramble, date: timerStartTime}, ...solves ])
     setCurrentScramble(generateScramble(20))
   }
 
@@ -132,7 +130,7 @@ const App = () => {
         </GraphColumn>
 
         <SolvesColumn>
-          <SolvesList solves={solves.reverse()} deleteSolve={deleteSolve}></SolvesList>
+          <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
         </SolvesColumn>
       </Utilities>
 
