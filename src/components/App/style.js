@@ -56,13 +56,23 @@ export const SchemaRow = styled.div `
 
     border: darkgray solid 1px;
     background-color: white;
+
+    margin-top: 5vh;
+
+    @media ${devices.laptop} {
+        margin-top: 0;
+    }
 `
 
 export const StatsRow = styled.div `
+
+    margin-top: 5vh;
+
     @media ${devices.laptop} {
         position: absolute;
         bottom: 0px;
         width: 100%;
+        margin-top: 0;
     }
 
     border: darkgray solid 1px;
@@ -70,10 +80,13 @@ export const StatsRow = styled.div `
 `
 
 export const GraphColumn =  styled(Column) `
+    margin-top: 5vh;
+
     @media ${devices.laptop} {
         width: 60%;
         margin-left: 2.5%;
         margin-right: 2.5%;
+        margin-top: 0;
         vertical-align: bottom;
     }
 
@@ -83,9 +96,12 @@ export const GraphColumn =  styled(Column) `
 `
 
 export const SolvesColumn =  styled(Column) `
+    margin-top: 5vh;
+
     @media ${devices.laptop} {
         width: 12.5%;
         height: 100%;
+        margin-top: 0;
     }
     @media ${devices.laptopL} {
         width: 17.5%;
