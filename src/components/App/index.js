@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Scramble from '../Scramble'
 import Timer from '../Timer'
 import ScrambleSchema from '../ScrambleSchema'
@@ -20,17 +20,33 @@ import clockImage from './../../img/timer.png'
 
 const App = () => {
   const [timerTime, setTimerTime] = useState(0)
+  const timerTimeRef = useRef(timerTime)
   const [timerStartTime, setTimerStartTime] = useState(0)
   const [timerIsOn, setTimerIsOn] = useState(false)
+  const timerIsOnRef = useRef(timerIsOn)
+
+  useEffect(() => {
+    timerIsOnRef.current = timerIsOn
+  }, [timerIsOn])
+
+  useEffect(() => {
+    timerTimeRef.current = timerTime
+  }, [timerTime])
 
   useEffect(() => {
     let interval = null
     if (timerIsOn) {
       interval = setInterval(() => {
-        setTimerTime(Date.now() - timerStartTime)
-      }, 100)
+        if(timerIsOnRef.current){
+          setTimerTime(Date.now() - timerStartTime)
+        }
+      }, 10)
     } else if (timerTime !== 0) {
       clearInterval(interval)
+      setTimeout(() => {
+        setSolves(solves => [{time: timerTimeRef.current, scramble: currentScramble, date: timerStartTime}, ...solves ])
+        setCurrentScramble(generateScramble(20))
+      }, 15)
     }
 
     return () => clearInterval(interval)
@@ -44,7 +60,10 @@ const App = () => {
 
   const stopTimer = () => {
     setTimerIsOn(false)
-    setSolves(solves => [{time: timerTime, scramble: currentScramble, date: timerStartTime}, ...solves ])
+  }
+
+  const saveSolve = () =>  {
+    setSolves(solves => [{time: timerTimeRef.current, scramble: currentScramble, date: timerStartTime}, ...solves ])
     setCurrentScramble(generateScramble(20))
   }
 
