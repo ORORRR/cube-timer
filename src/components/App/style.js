@@ -11,12 +11,29 @@ export const Header = styled.div `
     color: #282c34;
     font-family: 'Russo One', sans-serif;
 
-    text-align: left;
-`
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 
-export const By = styled.span `
-    font-family: 'Indie Flower', cursive;
-`;
+    @media ${devices.laptop} {
+        text-align: left;
+        margin-left: 3%;
+        
+    }
+
+    width: fit-content;
+
+    span {
+        font-family: 'Indie Flower', cursive;
+    }
+
+    img {
+        height: calc(10px + 3vmin);
+        width: calc(10px + 3vmin);
+        vertical-align: bottom;
+    }
+`
 
 export const Utilities = styled.div `
     width : 100%;

@@ -9,7 +9,6 @@ import Statistics from '../Statistics'
 import {
   CubeTimer,
   Header,
-  By,
   Utilities,
   SchemaStatsColumn,
   GraphColumn,
@@ -17,6 +16,8 @@ import {
   SchemaRow,
   StatsRow
 } from './style'
+import clockImage from './../../img/timer.png'
+
 import { format } from 'highcharts'
 
 const App = () => {
@@ -104,8 +105,8 @@ const App = () => {
   return (
     <CubeTimer>
       <Header>
-        <p>Cube Timer</p>
-        <p>by <By>ORORRR</By></p>
+        <p>Cube Timer <img src={clockImage}/></p>
+        <p>by <span>ORORRR</span></p>
       </Header>
 
       <Scramble scramble={currentScramble}></Scramble>
