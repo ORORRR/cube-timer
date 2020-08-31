@@ -76,6 +76,10 @@ export const GraphColumn =  styled(Column) `
         margin-right: 2.5%;
         vertical-align: bottom;
     }
+
+    padding: 2vh 2vh 0 2vh;
+    border: darkgray solid 1px;
+    background-color: white;
 `
 
 export const SolvesColumn =  styled(Column) `
