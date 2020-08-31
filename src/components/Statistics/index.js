@@ -1,8 +1,5 @@
 import React from 'react'
 import { msToTime } from '../../utils/time'
-import { 
-    SolveStats
-} from './style'
 
 const Statistics = ({ solves })  => {
 
@@ -21,14 +18,14 @@ const Statistics = ({ solves })  => {
     const averageOf12 = getAverageOf(12)
 
     return (
-        <SolveStats>
+        <div>
             <h3>Best:</h3>
             <p>{ bestTime? msToTime(bestTime) : 'none' }</p>
             <h3>Average of 5:</h3>
             <p>{ averageOf5? msToTime(averageOf5) : 'none' }</p>
             <h3>Average of 12:</h3>
             <p>{ averageOf12? msToTime(averageOf12) : 'none' }</p>
-        </SolveStats>
+        </div>
     )
 }
 

@@ -1,6 +1,4 @@
-import React from 'react'
 import styled from 'styled-components'
-
 
 export const Time = styled.div `
   font-family: 'Major Mono Display', monospace;
