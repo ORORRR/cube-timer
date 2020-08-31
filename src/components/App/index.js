@@ -132,7 +132,7 @@ const App = () => {
         </GraphColumn>
 
         <SolvesColumn>
-          <SolvesList solves={solves} deleteSolve={deleteSolve}></SolvesList>
+          <SolvesList solves={solves.reverse()} deleteSolve={deleteSolve}></SolvesList>
         </SolvesColumn>
       </Utilities>
 
