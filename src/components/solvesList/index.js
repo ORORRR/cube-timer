@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { msToTime } from '../../utils/time'
 import {
     SolveTable,
@@ -25,6 +26,15 @@ const SolvesList = ({ solves, deleteSolve})  => {
             </tbody>
         </SolveTable>
     )
+}
+
+SolvesList.propTypes = {
+    solves: PropTypes.arrayOf(PropTypes.shape({
+        time: PropTypes.number,
+        scramble: PropTypes.arrayOf(PropTypes.string),
+        date: PropTypes.number
+    })).isRequired,
+    deleteSolve: PropTypes.func.isRequired
 }
 
 export default SolvesList

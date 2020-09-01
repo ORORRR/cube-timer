@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import { 
     CubeSchema, 
     CubeTile, 
@@ -35,6 +36,10 @@ const ScrambleSchema = ({ scramble })  => {
         </CubeSchema>
     )
     
+}
+
+ScrambleSchema.propTypes = {
+    scramble: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 export default ScrambleSchema;

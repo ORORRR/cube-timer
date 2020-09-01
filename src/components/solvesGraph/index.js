@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { msToTime } from '../../utils/time'
@@ -55,6 +56,14 @@ const SolvesGraph = ({ solves })  => {
             options={chartOptions}
         />
     )
+}
+
+SolvesGraph.propTypes = {
+    solves: PropTypes.arrayOf(PropTypes.shape({
+        time: PropTypes.number,
+        scramble: PropTypes.arrayOf(PropTypes.string),
+        date: PropTypes.number
+    })).isRequired
 }
 
 export default SolvesGraph

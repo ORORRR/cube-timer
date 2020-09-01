@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { msToTime } from '../../utils/time'
 
 const Statistics = ({ solves })  => {
@@ -27,6 +28,14 @@ const Statistics = ({ solves })  => {
             <p>{ averageOf12? msToTime(averageOf12) : 'none' }</p>
         </div>
     )
+}
+
+Statistics.propTypes = {
+    solves: PropTypes.arrayOf(PropTypes.shape({
+        time: PropTypes.number,
+        scramble: PropTypes.arrayOf(PropTypes.string),
+        date: PropTypes.number
+    })).isRequired
 }
 
 export default Statistics
