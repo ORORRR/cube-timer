@@ -44,7 +44,7 @@ const App = () => {
     } else if (timerTime !== 0) {
       clearInterval(interval)
       setTimeout(() => {
-        setSolves(solves => [{time: timerTimeRef.current, scramble: currentScramble, date: timerStartTime}, ...solves ])
+        setSolves(solves => [...solves, {time: timerTimeRef.current, scramble: currentScramble, date: timerStartTime}])
         setCurrentScramble(generateScramble(20))
       }, 15)
     }

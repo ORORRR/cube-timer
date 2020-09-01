@@ -11,7 +11,7 @@ const SolvesList = ({ solves, deleteSolve})  => {
             <caption>Times :</caption>
             <tbody>
              {
-                solves.map((solve, i) => {        
+                solves.slice().reverse().map((solve, i) => {        
                     return (
                         <tr key={i}>
                             <td>{msToTime(solve['time'])}</td>

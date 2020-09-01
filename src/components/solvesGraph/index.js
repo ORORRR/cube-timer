@@ -1,13 +1,19 @@
 import React from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { msToTime } from '../../utils/time'
 
 
 const SolvesGraph = ({ solves })  => {
 
     const formatData = (solves) => {
-        return solves.map( (solve) => {
-            return [solve['date'], solve['time']]
+        return solves.map( (solve, i) => {
+            return {
+                y: solve['time'], 
+                x: i+1, 
+                date: solve['date'], 
+                scramble: solve['scramble']
+            }
         })
     }
 
@@ -17,10 +23,7 @@ const SolvesGraph = ({ solves })  => {
         },
         title: null,
         xAxis: {
-            type: 'datetime',
-            dateTimeLabelFormats: {
-                day: '%e of %b'
-            }
+            type: 'linear'
         },
         yAxis: {
             type: 'datetime',
@@ -35,7 +38,14 @@ const SolvesGraph = ({ solves })  => {
         series: [{
             name: "cube solved",
             data: formatData(solves)
-        }]
+        }],
+        tooltip: {
+            formatter: function() {
+                return 'time : <b>' + msToTime(this.y)+ '</b>s<br/> date :<b>' +  Highcharts.dateFormat('%e of %b',
+                    new Date( this.point.options.date)) + '</b> <br/> scramble : <b>'+ this.point.options.scramble.join(' ') +'</b>';
+                
+            }
+        }
     }    
 
     return (
