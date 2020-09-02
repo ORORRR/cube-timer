@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cube-timer/precache-manifest.33d69e98be87aba0f91698836c613d43.js"
+  "/cube-timer/precache-manifest.f603dbdd67329ea9a6f82e4b7257448d.js"
 );
 
 self.addEventListener('message', (event) => {

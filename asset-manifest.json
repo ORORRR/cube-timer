@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cube-timer/static/css/main.9b941ead.chunk.css",
-    "main.js": "/cube-timer/static/js/main.043c4ff1.chunk.js",
-    "main.js.map": "/cube-timer/static/js/main.043c4ff1.chunk.js.map",
+    "main.js": "/cube-timer/static/js/main.d26f3f7e.chunk.js",
+    "main.js.map": "/cube-timer/static/js/main.d26f3f7e.chunk.js.map",
     "runtime-main.js": "/cube-timer/static/js/runtime-main.94463fe7.js",
     "runtime-main.js.map": "/cube-timer/static/js/runtime-main.94463fe7.js.map",
     "static/js/2.bfdd2f48.chunk.js": "/cube-timer/static/js/2.bfdd2f48.chunk.js",
     "static/js/2.bfdd2f48.chunk.js.map": "/cube-timer/static/js/2.bfdd2f48.chunk.js.map",
     "index.html": "/cube-timer/index.html",
-    "precache-manifest.33d69e98be87aba0f91698836c613d43.js": "/cube-timer/precache-manifest.33d69e98be87aba0f91698836c613d43.js",
+    "precache-manifest.f603dbdd67329ea9a6f82e4b7257448d.js": "/cube-timer/precache-manifest.f603dbdd67329ea9a6f82e4b7257448d.js",
     "service-worker.js": "/cube-timer/service-worker.js",
     "static/css/main.9b941ead.chunk.css.map": "/cube-timer/static/css/main.9b941ead.chunk.css.map",
     "static/js/2.bfdd2f48.chunk.js.LICENSE.txt": "/cube-timer/static/js/2.bfdd2f48.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.94463fe7.js",
     "static/js/2.bfdd2f48.chunk.js",
     "static/css/main.9b941ead.chunk.css",
-    "static/js/main.043c4ff1.chunk.js"
+    "static/js/main.d26f3f7e.chunk.js"
   ]
 }
