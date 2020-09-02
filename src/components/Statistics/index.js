@@ -4,9 +4,9 @@ import { msToTime } from '../../utils/time'
 
 const Statistics = ({ solves })  => {
 
-    const bestTime = solves.length && solves.reduce((currentBestTime, next) => {
+    const bestTime = (solves.length && solves.reduce((currentBestTime, next) => {
         return currentBestTime < next['time'] ? currentBestTime : next['time']
-    }, solves[0]['time']) || null
+    }, solves[0]['time'])) || null
 
     const getAverageOf = (size)  => {
         if (solves.length < size )
