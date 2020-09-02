@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "57840ab3829e06980dac60d745b88254",
+    "revision": "d75bc8bd8998673a63170cd08cb4abb4",
     "url": "/cube-timer/index.html"
   },
   {
-    "revision": "5ef24db49fb3295af25e",
+    "revision": "db5436852f31b312727b",
     "url": "/cube-timer/static/css/main.9b941ead.chunk.css"
   },
   {
-    "revision": "a93612e27537c8057d3c",
-    "url": "/cube-timer/static/js/2.bfdd2f48.chunk.js"
+    "revision": "7501282f77ce754bc0bd",
+    "url": "/cube-timer/static/js/2.11a8af5e.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/cube-timer/static/js/2.bfdd2f48.chunk.js.LICENSE.txt"
+    "url": "/cube-timer/static/js/2.11a8af5e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5ef24db49fb3295af25e",
-    "url": "/cube-timer/static/js/main.d26f3f7e.chunk.js"
+    "revision": "db5436852f31b312727b",
+    "url": "/cube-timer/static/js/main.ade40618.chunk.js"
   },
   {
     "revision": "eff9aa9be2bacb418080",
