@@ -62,11 +62,6 @@ const App = () => {
     setTimerIsOn(false)
   }
 
-  const saveSolve = () =>  {
-    setSolves(solves => [{time: timerTimeRef.current, scramble: currentScramble, date: timerStartTime}, ...solves ])
-    setCurrentScramble(generateScramble(20))
-  }
-
   // ---------------------------------------------------------------------------------------------
 
   const [spaceKeyPressed, setSpaceKeyPressed] = useState(false)
@@ -122,7 +117,7 @@ const App = () => {
   return (
     <CubeTimer>
       <Header>
-        <p>Cube Timer <img src={clockImage}/></p>
+        <p>Cube Timer <img src={clockImage} alt=""/></p>
         <p>by <span>ORORRR</span></p>
       </Header>
 

@@ -213,11 +213,3 @@ const turnFaceClockwise = (cubeFace) => {
         cubeFace[8], cubeFace[5], cubeFace[2]
     ]
 }
-
-const turnFaceCounterClockwise = (cubeFace) => {
-    return [
-        cubeFace[2], cubeFace[5], cubeFace[8],
-        cubeFace[1], cubeFace[4], cubeFace[7],
-        cubeFace[0], cubeFace[3], cubeFace[6]
-    ]
-}
