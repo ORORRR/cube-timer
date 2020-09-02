@@ -122,7 +122,7 @@ const App = () => {
   return (
     <CubeTimer>
       <Header>
-        <p>Cube Timer <img src={clockImage}/></p>
+        <p>Cube Timer <img src={clockImage}/>lol</p>
         <p>by <span>ORORRR</span></p>
       </Header>
 
