@@ -17,7 +17,7 @@ const SolvesList = ({ solves, deleteSolve})  => {
                         <tr key={i}>
                             <td>{msToTime(solve['time'])}</td>
                             <td>
-                                <DeleteButton  onClick={() => deleteSolve(i)}><i className="fa fa-trash"></i></DeleteButton>
+                                <DeleteButton  onClick={() => deleteSolve(solve['date'])}><i className="fa fa-trash"></i></DeleteButton>
                             </td>
                         </tr>
                     )

@@ -110,8 +110,8 @@ const App = () => {
     localStorage.setItem('solves', JSON.stringify(solves))
   }, [solves])
 
-  const deleteSolve = (index) => {
-    setSolves(solves => solves.filter((_, i) => i !== index))
+  const deleteSolve = (solveTimestamp) => {
+    setSolves(solves => solves.filter(solve => solve['date'] !== solveTimestamp))
   }
 
   return (
