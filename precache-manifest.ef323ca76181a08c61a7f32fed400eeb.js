@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d75bc8bd8998673a63170cd08cb4abb4",
+    "revision": "6b9a75e579416b8a6f213a5bd10c9041",
     "url": "/cube-timer/index.html"
   },
   {
-    "revision": "db5436852f31b312727b",
+    "revision": "0228370a26caa4fb472d",
     "url": "/cube-timer/static/css/main.9b941ead.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cube-timer/static/js/2.11a8af5e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "db5436852f31b312727b",
-    "url": "/cube-timer/static/js/main.ade40618.chunk.js"
+    "revision": "0228370a26caa4fb472d",
+    "url": "/cube-timer/static/js/main.88fe18fd.chunk.js"
   },
   {
     "revision": "eff9aa9be2bacb418080",
