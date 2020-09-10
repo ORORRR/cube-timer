@@ -14,6 +14,8 @@ Cube Timer incorporates a scramble generator that displays a new scramble for ea
 
 Cube Timer is available here : [https://ororrr.github.io/cube-timer](https://ororrr.github.io/cube-timer)
 
+![Cube Timer Demo](./cube-timer-demo.gif "Demo Cube Timer")
+
 
 ## How is it made ?
 
