@@ -21,7 +21,7 @@ Cube Timer is available here : [https://ororrr.github.io/cube-timer](https://oro
 
 This application is made in **Javascript** with **React** and is fully **responsive**, so It can be used anywhere.
 
-Solve's times are saved in the local storage of the brower.
+Solve's times are saved in the local storage of the browser.
 
 
 ## Installation guide
